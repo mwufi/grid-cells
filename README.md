@@ -51,21 +51,9 @@ The implementation requires an installation of
 [Sonnet](https://github.com/deepmind/sonnet) version 1.27.
 
 ```shell
-$ virtualenv env
-$ source env/bin/activate
-$ pip install --upgrade numpy==1.13.3
-$ pip install --upgrade tensorflow==1.12.0-rc0
-$ pip install --upgrade dm-sonnet==1.27
-$ pip install --upgrade scipy==1.0.0
-$ pip install --upgrade matplotlib==1.5.2
-$ pip install --upgrade tensorflow-probability==0.5.0
-$ pip install --upgrade wrapt==1.9.0
-```
-
-An example training script can be executed from a python interpreter:
-
-```shell
-$ python train.py --task_root='path/to/datasets/root/folder' --saver_results_directory='path/to/results/folder'
+$ pip install --upgrade -r requirements.txt
+$ gsutil cp -r gs://grid-cells-datasets/square_room_100steps_2.2m_1000000 .
+$ python train.py --task_root=. --saver_results_directory=.
 ```
 
 Disclaimer: This is not an official Google product.
